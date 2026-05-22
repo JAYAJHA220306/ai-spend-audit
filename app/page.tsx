@@ -1,65 +1,96 @@
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="min-h-screen bg-[#0a0a0f] text-white overflow-hidden relative">
+      {/* Grid background */}
+      <div
+        className="absolute inset-0 opacity-20"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0,255,128,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,128,0.15) 1px, transparent 1px)`,
+          backgroundSize: "40px 40px",
+        }}
+      />
+
+      {/* Glow orb */}
+      <div
+        className="absolute top-[-200px] left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full opacity-20"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(0,255,128,0.4) 0%, transparent 70%)",
+        }}
+      />
+
+      <div className="relative z-10 max-w-4xl mx-auto px-6 py-24 text-center">
+        {/* Badge */}
+        <div className="inline-flex items-center gap-2 bg-green-500/10 text-green-400 text-sm font-medium px-4 py-1.5 rounded-full mb-8 border border-green-500/30">
+          <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+          Free AI Spend Audit Tool
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        {/* Headline */}
+        <h1 className="text-6xl font-bold mb-6 leading-tight tracking-tight">
+          Stop overpaying for{" "}
+          <span className="text-transparent bg-clip-text"
+            style={{ backgroundImage: "linear-gradient(90deg, #00ff80, #00d4ff)" }}>
+            AI tools
+          </span>
+        </h1>
+
+        <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+          Get an instant audit of your AI subscriptions. See exactly where
+          you're overspending and how much you could save — in 2 minutes.
+        </p>
+
+        <Link
+          href="/audit"
+          className="inline-flex items-center gap-2 text-black font-bold px-10 py-4 rounded-xl text-lg transition-all hover:scale-105 hover:shadow-lg"
+          style={{ background: "linear-gradient(90deg, #00ff80, #00d4ff)" }}
+        >
+          Start Free Audit
+          <span>→</span>
+        </Link>
+        <p className="text-gray-600 text-sm mt-4">
+          No login required · Takes 2 minutes · 100% free
+        </p>
+
+        {/* Stats */}
+        <div className="grid grid-cols-3 gap-6 mt-20 mb-16">
+          {[
+            { value: "$2,400", label: "Avg. annual savings found" },
+            { value: "8", label: "AI tools audited" },
+            { value: "2 min", label: "Time to complete" },
+          ].map((stat) => (
+            <div
+              key={stat.label}
+              className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur"
+            >
+              <div className="text-3xl font-bold text-green-400 mb-1">
+                {stat.value}
+              </div>
+              <div className="text-gray-400 text-sm">{stat.label}</div>
+            </div>
+          ))}
         </div>
-      </main>
-    </div>
+
+        {/* Tools */}
+        <p className="text-gray-600 text-xs uppercase tracking-widest mb-4">
+          We audit spend on
+        </p>
+        <div className="flex flex-wrap justify-center gap-3">
+          {[
+            "Cursor","GitHub Copilot","Claude","ChatGPT",
+            "Gemini","Windsurf","OpenAI API","Anthropic API",
+          ].map((tool) => (
+            <span
+              key={tool}
+              className="bg-white/5 text-gray-300 px-4 py-2 rounded-lg text-sm border border-white/10 hover:border-green-500/40 transition-colors"
+            >
+              {tool}
+            </span>
+          ))}
+        </div>
+      </div>
+    </main>
   );
 }
