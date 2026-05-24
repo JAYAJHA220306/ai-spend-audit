@@ -32,7 +32,7 @@ Total potential annual savings: $${totalAnnualSavings.toFixed(0)}
 Write a 80-100 word personalized audit summary for this team. Be specific about their biggest saving opportunity. Be direct and helpful, not salesy. No bullet points, just one paragraph.`;
 
     const response = await groq.chat.completions.create({
-      model: "llama3-8b-8192",
+      model: "llama-3.3-70b-versatile",
       messages: [{ role: "user", content: prompt }],
       max_tokens: 200,
       temperature: 0.7,
