@@ -28,5 +28,6 @@ export async function GET(
     totalMonthlySpend: data.total_monthly_savings,
     totalMonthlySavings: data.total_monthly_savings,
     totalAnnualSavings: data.total_annual_savings,
+    aiSummary: data.ai_summary,
   });
 }
