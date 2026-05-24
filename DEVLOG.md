@@ -39,3 +39,36 @@ Supabase correctly but the ID wasn't reaching the results page.
 **Plan for tomorrow:** Groq AI summary, Resend email confirmation,
 Open Graph tags for the shareable links, and push a working build
 to Vercel.
+
+## Day 3 — 2026-05-24
+
+**Hours worked:** ~4
+
+**What I did:** Got the AI summary working today — integrated Groq to
+generate a personalized paragraph based on the audit results. Took a
+while because the model I was using (llama3-8b-8192) turned out to be
+decommissioned, so it was silently falling back to the template every
+time. Only figured it out by actually reading the terminal logs. Switched
+to llama-3.3-70b-versatile and it works now. Also set up the Resend
+email so users get a confirmation when they submit their email on the
+results page. Added Open Graph tags so the shareable links look good
+when posted on Twitter or Slack. Pushed all the env variables to Vercel
+and redeployed. Wrote 7 tests for the audit engine — all passing. Set
+up GitHub Actions so tests run automatically on every push.
+
+**What I learned:** Vercel doesn't read your local .env.local file at
+all — you have to add every variable again manually in their dashboard.
+Obvious in hindsight but cost me time. Also learned to always check
+terminal logs when something seems to be "working" but giving wrong
+output — the Groq fallback looked fine on screen but wasn't actually
+using AI.
+
+**Blockers:** The decommissioned Groq model was the main thing. The
+error was swallowed by the try/catch so the page still loaded fine,
+just with a templated summary instead of a real one. Took embarrassingly
+long to spot.
+
+**Plan for tomorrow:** Write all the markdown docs the assignment
+requires. There are a lot of them — ARCHITECTURE, REFLECTION, GTM,
+ECONOMICS, PROMPTS, PRICING_DATA, TESTS, LANDING_COPY, METRICS. Also
+need to do the 3 user interviews, been putting them off.
