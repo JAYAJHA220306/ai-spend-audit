@@ -72,3 +72,28 @@ long to spot.
 requires. There are a lot of them — ARCHITECTURE, REFLECTION, GTM,
 ECONOMICS, PROMPTS, PRICING_DATA, TESTS, LANDING_COPY, METRICS. Also
 need to do the 3 user interviews, been putting them off.
+
+
+
+## Day 4 — 2026-05-25
+
+**Hours worked:** ~3
+
+**What I did:** Wrote all the technical documentation today.
+PRICING_DATA.md was the most important one — went through every
+vendor's official pricing page and verified each number with a URL
+and date. ARCHITECTURE.md has a Mermaid system diagram showing the
+full data flow from form submission to results page. PROMPTS.md
+documents the Groq prompt with the full iteration history of what
+I tried before landing on the final version. TESTS.md lists all 7
+tests with what each one covers and how to run them individually.
+
+**What I learned:** Writing the architecture doc made me realize the
+app's data flow is actually pretty clean — form to engine to database
+to results, with the AI summary as a side step that can fail gracefully.
+
+**Blockers:** None today, documentation day was straightforward.
+
+**Plan for tomorrow:** Write GTM.md, ECONOMICS.md, LANDING_COPY.md,
+METRICS.md, REFLECTION.md, and USER_INTERVIEWS.md. Also need to
+update README.md with screenshots and the decisions section.
