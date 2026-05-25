@@ -1,0 +1,9 @@
+2026-05-24 docs: add Day 3 devlog entry
+2026-05-24 feat: fix Groq model, add CI workflow and passing tests
+2026-05-24 fix: add groq-sdk to dependencies
+2026-05-23 docs: add Day 2 devlog entry
+2026-05-23 feat: full audit flow working end-to-end with Supabase
+2026-05-22 docs: add Day 1 devlog
+2026-05-22 feat: homepage, audit form, and audit engine
+2026-05-22 feat: initial Next.js scaffold with Tailwind and TypeScript
+2026-05-22 Initial commit from Create Next App
