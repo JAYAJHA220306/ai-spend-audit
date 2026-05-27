@@ -98,3 +98,11 @@ maximizes completion rate and respects the user's time.
 One repo, one deployment, API routes alongside UI code. No
 separate Express server needed. Vercel handles everything
 with zero config.
+
+## Screenshots
+
+![Homepage](public/screenshots/homepage.png)
+![Audit Form](public/screenshots/audit-form.png)
+![Results Page - Top](public/screenshots/results-top.png)
+![Results Page - Bottom](public/screenshots/results-bottom.png)
+

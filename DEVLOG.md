@@ -125,3 +125,23 @@ anything else in the codebase.
 **Plan for tomorrow:** Final checks before submission — verify live
 URL works end to end, check all 11 required files exist at repo root,
 run the tests one more time, submit the Google Form.
+
+## Day 6 — 2026-05-27
+
+**Hours worked:** ~3
+
+**What I did:** Final day — cleaned up the repo, added all missing
+docs to git, fixed an accidental file called "tatus" that got
+committed. Updated README with screenshots and the decisions section.
+Changed the homepage background from a static grid to an animated
+particle network — floating green dots that connect with lines when
+they get close. Ran final checks: 7 tests passing, live URL working,
+GitHub Actions green. Submitted.
+
+**What I learned:** Leaving docs to the last day is stressful.
+Should have been writing DEVLOG entries and small docs throughout
+the week instead of batching everything.
+
+**Blockers:** None on the final day thankfully.
+
+**Plan for tomorrow:** Wait for Round 2 results.
