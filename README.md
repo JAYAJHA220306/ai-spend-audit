@@ -70,3 +70,31 @@ npx jest
 - [METRICS.md](./METRICS.md) — north star metric and instrumentation plan
 - [USER_INTERVIEWS.md](./USER_INTERVIEWS.md) — 3 user interviews
 - [REFLECTION.md](./REFLECTION.md) — what I learned and would change
+
+## Decisions
+
+**1. Rules-based audit engine instead of AI**
+The audit logic is pure TypeScript, not AI-generated. Hardcoded
+rules are more reliable for financial recommendations — a finance
+person can read the code and verify the logic. AI is only used
+for the personalized summary paragraph, not the core math.
+
+**2. Groq instead of Anthropic API**
+The assignment allows any LLM. Groq has a genuine free tier with
+no credit card required. Would switch to Claude in production for
+better summary quality.
+
+**3. Supabase over Firebase**
+Postgres gives proper relational structure with a foreign key from
+leads to audits. The SQL editor made schema setup fast. Firebase's
+document model would have been messier for this use case.
+
+**4. Email captured after results, never before**
+Full audit results are shown without any login or email gate.
+Email is only asked after the user sees their savings. This
+maximizes completion rate and respects the user's time.
+
+**5. Next.js App Router over separate frontend/backend**
+One repo, one deployment, API routes alongside UI code. No
+separate Express server needed. Vercel handles everything
+with zero config.
